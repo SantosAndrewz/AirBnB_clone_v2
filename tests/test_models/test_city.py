@@ -1,35 +1,35 @@
 #!/usr/bin/python3
-""" """
+"""Unittest module for City class"""
 from tests.test_models.test_base_model import test_basemodel
 from models.city import City
 import pycodestyle
 
 
 class test_City(test_basemodel):
-    """ """
+    """Tests for city class"""
 
     def __init__(self, *args, **kwargs):
-        """ """
+        """initializing the class instances"""
         super().__init__(*args, **kwargs)
         self.name = "City"
         self.value = City
 
     def test_state_id(self):
-        """ """
+        """Testing for the state_id"""
         new = self.value()
         self.assertEqual(type(new.state_id), str)
 
     def test_name(self):
-        """ """
+        """Testing for the name attribute"""
         new = self.value()
         self.assertEqual(type(new.name), str)
 
 
 class Test_PEP8(unittest.TestCase):
-    """test User"""
+    """testing for use of PEP8 style"""
 
     def test_pep8_user(self):
-        """test pep8 style"""
+        """testing for pep8 style compliancy"""
         pep8style = pycodestyle.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/city.py'])
         self.assertEqual(result.total_errors, 0,
@@ -69,7 +69,7 @@ class TestCity(unittest.TestCase):
         self.assertIsNotNone(City.__doc__)
 
     def test_attributes_City(self):
-        """chekcing if City have attributes"""
+        """checking if City have attributes"""
         self.assertTrue('id' in self.city.__dict__)
         self.assertTrue('created_at' in self.city.__dict__)
         self.assertTrue('updated_at' in self.city.__dict__)
