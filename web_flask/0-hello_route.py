@@ -2,7 +2,7 @@
 '''
 - A python script that starts a Flask web application.
 - The web application listens on 0.0.0.0, port 5000
-- Route '/' displays "Hello HBNB!".
+- Route '/airnbnb-onepage' displays "Hello HBNB!".
 
 Usage:
     python3 -m web_flask.0-hello_route
@@ -14,7 +14,7 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route("/", strict_slashes=False)
+@app.route("/airbnb-onepage/", strict_slashes=False)
 def call_hbnb():
     '''Function  displays "Hello HBNB!" on running the URL'''
 
